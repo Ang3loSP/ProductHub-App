@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+    <title>ProductHub | Premium Product Showcase</title>
+    <!-- Preconnect & Custom Fonts (Playfair Display for headings + Inter for body) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;14..32,400;14..32,500;14..32,600;14..32,700;14..32,800&family=Playfair+Display:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="Styles.css">
+</head>
+<body>
+    <a href="#main-content" class="skip-link">Skip to main content</a>
+    
+    <header class="header">
+        <div class="header-container">
+            <a href="#home" class="logo">ProductHub</a>
+            <nav class="navbar" aria-label="Main navigation">
+                <button class="mobile-menu-toggle" id="mobileMenuToggle" aria-expanded="false" aria-controls="primary-navigation" aria-label="Open menu">
+                    <span class="hamburger-line"></span>
+                    <span class="hamburger-line"></span>
+                    <span class="hamburger-line"></span>
+                </button>
+                <ul class="nav-menu" id="primary-navigation" data-visible="false">
+                    <li><a href="#home" class="nav-link active">Home</a></li>
+                    <li><a href="#products" class="nav-link">Products</a></li>
+                    <li><a href="#contact" class="nav-link">Contact</a></li>
+                    <!-- Enhanced: Register link with special styling & modal trigger -->
+                    <li><a href="#register" class="nav-link register-link" id="registerNavLink">Register</a></li>
+                </ul>
+            </nav>
+            <button class="theme-toggle" id="themeToggle" aria-label="Switch to dark theme"><span class="theme-icon">🌙</span></button>
+        </div>
+    </header>
+    
+    <div id="home" class="home-anchor"></div>
+    
+    <main id="main-content" class="main-content">
+        <!-- ENHANCED: Hero section with glassmorphism, gradient text and CTA (preserved original structure, added visual depth) -->
+        <section class="hero-section" aria-label="Hero banner">
+            <div class="hero-glass-card">
+                <h1 class="hero-title">Discover <span class="gradient-text">Premium</span> Selection</h1>
+                <p class="hero-subtitle">Elevate your lifestyle with curated products, crafted with excellence and care.</p>
+                <a href="#products" class="hero-cta">Explore Now →</a>
+            </div>
+        </section>
+
+        <section class="controls-section" aria-labelledby="controls-heading">
+            <h2 id="controls-heading" class="visually-hidden">Product Controls</h2>
+            <div class="controls-container">
+                <div class="search-container" role="search">
+                    <label for="searchInput" class="search-label">Search Products:</label>
+                    <div class="search-input-wrapper">
+                        <input type="search" id="searchInput" class="search-input" placeholder="Enter product name or category...">
+                        <button class="search-button" id="searchButton">🔍 Search</button>
+                    </div>
+                </div>
+                <div class="category-container">
+                    <label for="categoryFilter" class="category-label">Category:</label>
+                    <select id="categoryFilter" class="category-select">
+                        <option value="all">All Categories</option>
+                        <option value="electronics">Electronics</option>
+                        <option value="accessories">Accessories</option>
+                        <option value="home">Home & Living</option>
+                        <option value="clothing">Clothing</option>
+                    </select>
+                </div>
+                <div class="view-toggle-container">
+                    <span class="view-toggle-label">View:</span>
+                    <div class="view-toggle-buttons">
+                        <button class="view-btn active" id="gridViewBtn" aria-pressed="true"><span class="view-icon">⊞</span> Grid</button>
+                        <button class="view-btn" id="listViewBtn" aria-pressed="false"><span class="view-icon">☰</span> List</button>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <section class="products-section" id="products">
+            <div class="section-header">
+                <h2 class="section-title">Our Products</h2>
+                <div class="results-count" id="resultsCount" aria-live="polite"></div>
+            </div>
+            <div class="products-grid grid-view" id="productsContainer" aria-live="polite"></div>
+            <div class="no-results" id="noResultsMessage" hidden>
+                <p>😕 No products found matching your search.</p>
+                <p>Try adjusting your search terms or <button class="reset-search-btn" id="resetSearchBtn">view all products</button>.</p>
+            </div>
+        </section>
+        
+        <section class="favourites-section">
+            <h2 class="section-title"><span class="favourite-icon">❤️</span> Your Wishlist</h2>
+            <div class="favourites-container" id="favouritesContainer"></div>
+            <div class="no-favourites" id="noFavouritesMessage">
+                <p>✨ Your wishlist is empty</p>
+                <p>Click the heart button on any product to add it here!</p>
+            </div>
+        </section>
+        
+        <section class="contact-section" id="contact">
+            <h2 class="section-title">Contact Us</h2>
+            <div class="contact-container">
+                <div class="contact-info">
+                    <h3>Get in Touch</h3>
+                    <p>Have questions about our products? We'd love to hear from you!</p>
+                    <ul class="contact-list">
+                        <li><span class="contact-icon">📧</span> <a href="mailto:support@producthub.com">support@producthub.com</a></li>
+                        <li><span class="contact-icon">📱</span> <a href="tel:+27 76 456 7890">(076) 456-7890</a></li>
+                        <li><span class="contact-icon">📍</span> 123 Product Street, Digital City</li>
+                    </ul>
+                </div>
+                <form class="contact-form" id="contactForm">
+                    <div class="form-group"><label for="name">Name *</label><input type="text" id="name" required></div>
+                    <div class="form-group"><label for="email">Email *</label><input type="email" id="email" required></div>
+                    <div class="form-group"><label for="message">Message *</label><textarea id="message" rows="4" required></textarea></div>
+                    <button type="submit" class="submit-btn">Send Message</button>
+                </form>
+            </div>
+        </section>
+    </main>
+    
+    <footer class="footer">
+        <div class="footer-container">
+            <p>&copy; 2026 ProductHub. All rights reserved.</p>
+            <p>Premium quality products for everyday life</p>
+        </div>
+    </footer>
+    
+    <script src="Script.js"></script>
+</body>
+</html>
