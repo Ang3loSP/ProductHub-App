@@ -4,7 +4,7 @@ A modern, feature-rich product showcase website with a sleek design, dark mode s
 
 ## 🌟 Live Demo
 
-[View the website](#) *(Open `Index.html` in your browser)*
+> Deployed on Netlify: https://asp-producthub.netlify.app/
 
 ## 📋 Overview
 
